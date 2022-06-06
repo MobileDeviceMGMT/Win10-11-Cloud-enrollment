@@ -1,0 +1,34 @@
+This powershell script is for enrollment when machine is already logged in with ANY account,but you need to open powershel ISE as Admin.
+Otherwise it will prevent you to gather hardwareHashes.
+
+Open Windows powershell as admin - it will ask you for $credentials, suggesting to put line by line and enter after each line. 
+
+CODE GOES:
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+Install-Script -Name Get-WindowsAutoPilotInfo
+Get-WindowsAutopilotInfo -OutputFile C:\AutoPilotHWID.csv
+
+OFFICIAL VERSION from Microsoft
+
+New-Item -Type Directory -Path "C:\HWID"
+Set-Location -Path "C:\HWID"
+$env:Path += ";C:\Program Files\WindowsPowerShell\Scripts"
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+Install-Script -Name Get-WindowsAutopilotInfo
+Get-WindowsAutopilotInfo -OutputFile AutopilotHWID.csv
+
+While OOBE is running(Out of box Experiance) you can start uploading the hardware hash by opening a command prompt (Shift+F10 at the sign-in prompt)
+and using the following commands:
+
+PowerShell.exe -ExecutionPolicy Bypass
+Install-Script -name Get-WindowsAutopilotInfo -Force
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+Get-WindowsAutopilotInfo -Online
+
+Suggesting you to use first method(but everything is dependable on scenario)
+After you confirm the details of the uploaded device hash
+Run a sync in the Microsoft Endpoint Manager admin center.
+Select Devices > Windows > Windows enrollment > Devices (under Windows Autopilot Deployment Program) > ADD/NEW
+
+WAIT few hours untill you fully manage someones computer on MS Azure cloud :D
