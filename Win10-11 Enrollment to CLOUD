@@ -30,7 +30,6 @@ Get-WindowsAutopilotInfo -Online
 
 Suggesting you to use first method(but everything is dependable on scenario)
 After you confirm the details of the uploaded device hash
-Run a sync in the Microsoft Endpoint Manager admin center.
+Run a sync in the Microsoft Endpoint Manager
 Select Devices > Windows > Windows enrollment > Devices (under Windows Autopilot Deployment Program) > ADD/NEW
-
-WAIT few hours untill you fully manage someones computer on MS Azure cloud :D
+WAIT few hours untill you fully manage someone computer on MS Azure cloud :D
