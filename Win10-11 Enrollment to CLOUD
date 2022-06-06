@@ -3,13 +3,15 @@ Otherwise it will prevent you to gather hardwareHashes.
 
 Open Windows powershell as admin - it will ask you for $credentials, suggesting to put line by line and enter after each line. 
 
+1st Method
 CODE GOES:
 
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 Install-Script -Name Get-WindowsAutoPilotInfo
 Get-WindowsAutopilotInfo -OutputFile C:\AutoPilotHWID.csv
 
-OFFICIAL VERSION from Microsoft
+
+2nd method - OFFICIAL VERSION from Microsoft
 
 New-Item -Type Directory -Path "C:\HWID"
 Set-Location -Path "C:\HWID"
@@ -18,7 +20,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 Install-Script -Name Get-WindowsAutopilotInfo
 Get-WindowsAutopilotInfo -OutputFile AutopilotHWID.csv
 
-While OOBE is running(Out of box Experiance) you can start uploading the hardware hash by opening a command prompt (Shift+F10 at the sign-in prompt)
+3rd method - While OOBE is running(Out of box Experiance) you can start uploading the hardware hash by opening a command prompt (Shift+F10 at the sign-in prompt)
 and using the following commands:
 
 PowerShell.exe -ExecutionPolicy Bypass
