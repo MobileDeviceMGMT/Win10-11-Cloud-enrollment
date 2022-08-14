@@ -26,7 +26,7 @@ and using the following commands:
 PowerShell.exe -ExecutionPolicy Bypass
 Install-Script -name Get-WindowsAutopilotInfo -Force
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
-Get-WindowsAutopilotInfo -Online
+Get-WindowsAutopilotInfo.ps1 -Online
 
 Suggesting you to use first method(but everything is dependable on scenario)
 After you confirm the details of the uploaded device hash
