@@ -35,7 +35,7 @@ WAIT few hours untill you fully manage someone computer on MS Azure cloud
 
 Update 2 May 2023
 
-According to microsoft the latest version of pulling hardware hashes is
+According to microsoft the latest version of powershell script for pulling hardware hashes is:
 
 md c:\HWID
 Set-Location c:\HWID
