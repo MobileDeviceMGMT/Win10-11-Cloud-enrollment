@@ -32,3 +32,16 @@ After you confirm the details of the uploaded device hash
 Run a sync in the Microsoft Endpoint Manager
 Select Devices > Windows > Windows enrollment > Devices (under Windows Autopilot Deployment Program) > ADD/NEW
 WAIT few hours untill you fully manage someone computer on MS Azure cloud
+
+Update 2 May 2023
+
+According to microsoft the latest version of pulling hardware hashes is
+
+md c:\HWID
+Set-Location c:\HWID
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted -Force
+Install-Script -Name Get-WindowsAutopilotInfo -Force
+$env:Path += ";C:\Program Files\WindowsPowerShell\Scripts"
+Get-WindowsAutopilotInfo.ps1 -OutputFile AutopilotHWID.csv
+
+Source: https://learn.microsoft.com/en-us/windows/deployment/windows-autopilot/demonstrate-deployment-on-vm#capture-the-hardware-id
