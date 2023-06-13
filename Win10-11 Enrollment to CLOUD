@@ -12,6 +12,7 @@ Get-WindowsAutopilotInfo -OutputFile C:\AutoPilotHWID.csv
 
 2nd method - OFFICIAL VERSION from Microsoft
 
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 New-Item -Type Directory -Path "C:\HWID"
 Set-Location -Path "C:\HWID"
 $env:Path += ";C:\Program Files\WindowsPowerShell\Scripts"
