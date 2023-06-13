@@ -19,13 +19,14 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 Install-Script -Name Get-WindowsAutopilotInfo
 Get-WindowsAutopilotInfo -OutputFile AutopilotHWID.csv
 
-3rd method - While OOBE is running(Out of box Experiance) you can start uploading the hardware hash by opening a command prompt (Shift+F10 at the sign-in prompt)
-and using the following commands:
+3rd method - While OOBE is running, you can start uploading the hardware hash by opening a command prompt (Shift+F10 at the sign-in prompt)
+running the PowerShell command in the command prompt that opens, and then using the following PowerShell commands:
 
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 PowerShell.exe -ExecutionPolicy Bypass
 Install-Script -name Get-WindowsAutopilotInfo -Force
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
-Get-WindowsAutopilotInfo.ps1 -Online
+Get-WindowsAutopilotInfo -Online
 
 Suggesting you to use first method(but everything is dependable on scenario)
 After you confirm the details of the uploaded device hash
@@ -44,4 +45,6 @@ Install-Script -Name Get-WindowsAutopilotInfo -Force
 $env:Path += ";C:\Program Files\WindowsPowerShell\Scripts"
 Get-WindowsAutopilotInfo.ps1 -OutputFile AutopilotHWID.csv
 
-Source: https://learn.microsoft.com/en-us/windows/deployment/windows-autopilot/demonstrate-deployment-on-vm#capture-the-hardware-id
+Source: 
+1 https://learn.microsoft.com/en-us/windows/deployment/windows-autopilot/demonstrate-deployment-on-vm#capture-the-hardware-id
+2 https://learn.microsoft.com/en-us/mem/autopilot/add-devices
