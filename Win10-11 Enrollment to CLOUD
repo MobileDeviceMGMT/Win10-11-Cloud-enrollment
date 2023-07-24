@@ -1,4 +1,4 @@
-Guide is for enrollment when machine is already logged in with ANY account,but you need to open powershel ISE as Admin.
+Guide is for enrollment when machine is already logged in with ANY account,but you need to open powershell ISE as Admin.
 Otherwise it will prevent you to gather hardwareHashes.
 
 Open Windows powershell as admin - it will ask you for $credentials, suggesting to put line by line and press enter after each line. 
